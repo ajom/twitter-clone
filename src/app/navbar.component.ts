@@ -2,11 +2,11 @@ import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: [ 'custom-styles/app.component.css' ]
+  selector: 'navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./custom-styles/navbar.component.css']
 })
-export class AppComponent {
+export class NavbarComponent {
   public modalRef: BsModalRef;
   constructor(private modalService: BsModalService) {}
 

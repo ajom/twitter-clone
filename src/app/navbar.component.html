@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-primary bg-light">
+  <div class="col-sm-1"></div>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <div class="col-sm-5">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Notifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Messages</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-3">
+      <a class="navbar-brand" href="#"><img width="35" src="assets/logo.png">Trumper</a>
+    </div>
+    <div class="col-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Trumper" aria-label="Search Trumper">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button">Go!</button>
+        </span>
+      </div>
+    </div>
+
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search Trumpeter">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+    <button type="button" class="btn btn-default btn-secondary"
+            tooltip="Profile and settings"
+            placement="bottom">
+      Profile
+    </button>
+
+
+    <button type="button" class="btn btn-primary nav-button"
+            (click)="openModal(newTweet)">Tweet</button>
+
+    <ng-template #newTweet>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Compose new Tweet</h4>
+        <button type="button" class="close pull-right" 
+                  aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="container" id="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label for="validationCustom01"></label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="What's happening?" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-9"></div>
+            <div class="col-3">
+              <button type="submit" class="btn btn-primary" style="margin-left: 8px;">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+
+
+  </div>
+  <div class="col-sm-1"></div>
+</nav>
