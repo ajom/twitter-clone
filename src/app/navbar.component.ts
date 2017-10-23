@@ -13,4 +13,7 @@ export class NavbarComponent {
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
+
+  newTweetTextbox: string = '';
+  maxTweetLength: number = 140;
 }

@@ -13,4 +13,6 @@ export class AppComponent {
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
+
+  expandedNewTweetBox: boolean = false;
 }
