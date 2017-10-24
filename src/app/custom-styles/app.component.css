@@ -23,3 +23,19 @@
 .new-tweet-button {
   margin-top: 9px;
 }
+
+.card-image {
+  float: left;
+  width: 40%;
+  height: 250px;
+}
+.card-image img {
+  height: 50%;
+}
+.right-content {
+  width: 60%;
+  float: left;
+}
+.card-title {
+  padding-left: 20px;
+}

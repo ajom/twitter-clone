@@ -15,5 +15,5 @@ export class NavbarComponent {
   }
 
   newTweetTextbox: string = '';
-  maxTweetLength: number = 140;
+  maxTweetLength: number = 141;
 }
