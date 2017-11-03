@@ -1,5 +1,8 @@
 import { Component, TemplateRef } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+
+import { TwitterService } from './twitter.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -8,37 +11,19 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: [ 'custom-styles/app.component.css' ]
 })
 export class AppComponent {
-  searchQuery = '';
-  tweetsdata;
+  searchQuery: string = '';
+  tweetsData;
+  expandedNewTweetBox: boolean = false;
 
   public modalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService, private http: Http) {}
+  constructor(private http: Http, private twitterService: TwitterService, private modalService: BsModalService) {
+    twitterService.tweetsData$.subscribe(data => {
+      this.tweetsData = data;
+    });
+  }
 
   public openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
-
-  makeCall() {
-    var headers = new Headers();
-
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    this.http.post('http://localhost:3000/authorize', {headers: headers}).subscribe((res) => {
-      console.log(res)
-    });
-  }
-
-  searchCall() {
-    var headers = new Headers();
-    var searchTerm = 'query=' + this.searchQuery;
-
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    this.http.post('http://localhost:3000/search', searchTerm, {headers: headers}).subscribe((res) => {
-      this.tweetsdata = res.json().data.statuses;
-    });
-  }
-
-  expandedNewTweetBox: boolean = false;
 }

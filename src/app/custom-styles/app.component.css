@@ -1,5 +1,5 @@
-.body-frame {
-
+.body-main {
+  padding-top: 56px;
 }
 .inner {
   background-color: #FFF;
@@ -13,6 +13,7 @@
   margin-bottom: 10px;
 }
 .profile {
+
 }
 .new-tweet-box {
   height: 58px;
@@ -23,7 +24,7 @@
 .new-tweet-button {
   margin-top: 9px;
 }
-
+/*Tweet Card Styles*/
 .card-image {
   float: left;
   width: 40%;

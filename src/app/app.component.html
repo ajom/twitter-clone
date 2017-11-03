@@ -1,10 +1,10 @@
 <navbar></navbar>
 
-<div class="container">
+<div class="container body-main">
   <div class="row">
     <div class="col-lg-3 body-frame top">
       <div class="col-lg-12 inner">
-        <button (click)="makeCall()" type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary">
           Authorize
         </button>
       </div>
@@ -14,9 +14,9 @@
     <div class="col-lg-6 body-frame top">
 
       <div class="col-lg-12 inner" [ngClass]="{
-            'new-tweet-box': expandedNewTweetBox === false,
-            'new-tweet-box-expanded': expandedNewTweetBox === true
-            }">
+          'new-tweet-box': expandedNewTweetBox === false,
+          'new-tweet-box-expanded': expandedNewTweetBox === true
+          }">
         <form class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -32,20 +32,6 @@
           </div>
         </form>
       </div>
-
-      <!-- <ng-template #expandNewTweetBox>
-        <div class="col-lg-12 inner new-tweet-box expanded">
-          <form>
-            <div class="form-group">
-
-              <input (click)="show = !show" type="text" class="form-control" id="exampleInputPassword1" placeholder="What's happening?">
-              show = {{show}}
-
-              <button type="button" class="btn btn-primary">Tweet</button>
-            </div>
-          </form>
-        </div>
-      </ng-template> -->
       
     </div>
 
@@ -74,25 +60,20 @@
   </div>
   <div class="row">
     <form class="col-4">
-      <div class="row">
-        <div class="input-field col-12">
-          <input id="hashtags" type="text" [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}">
-          <label for="hashtags">Search by hashtag</label>
-        </div>
-      </div>
-      <button type="button" class="btn btn-primary" (click)="searchCall()">Search</button>
-      <div *ngFor="let item of tweetsdata" class="col-12">
-        <div class="card">
-          <div class="card-image">
-            <img style="width: 100px; height: 100px;" src={{item.user.profile_image_url}}>
-          </div>
-          <div class="right-content">
-            <span class="card-title">{{ item.user.name }}</span>
-            <div class="card-content">
-              <p>{{ item.text }}</p>
+      <div *ngIf="tweetsData">
+        <div *ngFor="let item of tweetsData" class="col-12">
+          <div class="card">
+            <div class="card-image">
+              <img style="width: 100px; height: 100px;" src={{item.user.profile_image_url}}>
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
+            <div class="right-content">
+              <span class="card-title">{{ item.user.name }}</span>
+              <div class="card-content">
+                <p>{{ item.text }}</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
             </div>
           </div>
         </div>

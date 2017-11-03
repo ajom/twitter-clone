@@ -7,6 +7,9 @@ import { AppBootstrapModule } from './app-bootstrap.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar.component';
+import { SearchbarComponent } from './searchbar.component';
+
+import { TwitterService } from './twitter.service';
 
 @NgModule({
   imports: [
@@ -17,9 +20,10 @@ import { NavbarComponent } from './navbar.component';
   ],
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchbarComponent
   ],
-  providers: [],
+  providers: [TwitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
